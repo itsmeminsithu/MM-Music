@@ -1,20 +1,27 @@
-<div align="center">
+# MM Music
 
-</div>
+A music player UI in React + Vite, laid out along the lines of the streaming apps people already know — sidebar, home feed, playlists, player bar at the bottom.
 
-# Run and deploy your AI Studio app
+## Status
 
-This contains everything you need to run your app locally.
+Two things to know before you clone this:
 
-View your app in AI Studio: https://ai.studio/apps/drive/1XBszpj0FsthVEPZP_LJ92oHZc-jUnzxH
+1. **It does not build.** `App.tsx` imports `components/Layout`, `components/Home`, `components/PlayerBar`, `components/AiDj` and `services/musicApi`. None of those are in this repo, so the build fails on the first import.
+2. **Playback is simulated.** There is no audio element and no audio file. Pressing play runs a timer that moves the progress bar — see the "Mocking audio behavior" block in `App.tsx`. This was a UI exercise, not a working player.
 
-## Run Locally
+What is in the repo: the `App.tsx` shell, `index.tsx`, `types.ts`, a few loose service files at the root (`musicApi.ts`, `mockFbApi.ts`, `gemini.ts`) that are not wired up to the paths `App.tsx` expects, plus Vite and TypeScript config.
 
-**Prerequisites:**  Node.js
+## Run it (once the missing files are back)
 
+```
+npm install
+npm run dev
+```
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## Stack
+
+React 19, TypeScript, Vite 6, lucide-react.
+
+## Licence
+
+MIT — see `LICENSE`. Copyright (c) 2025 Min SiThu.
